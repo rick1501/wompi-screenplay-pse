@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Creación de transacción PSE en Wompi" skipped="0" tests="2" time="0.03" timestamp="2025-08-16 09:04:22"><testcase name="Creación exitosa de transacción PSE (respuesta inicial PENDING/CREATED)"/><testcase name="Error al crear PSE por documento inválido"/></testsuite>

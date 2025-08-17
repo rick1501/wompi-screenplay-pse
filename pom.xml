@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>co.com.wompi</groupId>
+  <artifactId>wompi-screenplay-pse</artifactId>
+  <version>1.0.0</version>
+  <name>Wompi Screenplay PSE</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <serenity.version>4.0.46</serenity.version>
+    <encoding>UTF-8</encoding>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <restassured.version>5.3.0</restassured.version>
+    <junit.version>4.13.2</junit.version>
+  </properties>
+
+  <dependencies>
+    <!-- Serenity Core -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-core</artifactId>
+      <version>${serenity.version}</version>
+    </dependency>
+
+    <!-- Screenplay -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-screenplay</artifactId>
+      <version>${serenity.version}</version>
+    </dependency>
+
+    <!-- Screenplay REST -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-screenplay-rest</artifactId>
+      <version>${serenity.version}</version>
+    </dependency>
+
+
+
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20240303</version>
+    </dependency>
+
+
+    <!-- Cucumber BDD (para Serenity 4.x es serenity-cucumber, no serenity-cucumber6) -->
+    <dependency>
+      <groupId>net.serenity-bdd</groupId>
+      <artifactId>serenity-cucumber</artifactId>
+      <version>${serenity.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- RestAssured para pruebas de API -->
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${restassured.version}</version>
+    </dependency>
+
+    <!-- JUnit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Logger para Serenity -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>2.0.13</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Ejecución de pruebas -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <includes>
+            <include>**/*Runner.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+
+      <!-- Reportes de Serenity -->
+      <plugin>
+        <groupId>net.serenity-bdd.maven.plugins</groupId>
+        <artifactId>serenity-maven-plugin</artifactId>
+        <version>${serenity.version}</version>
+        <executions>
+          <execution>
+            <id>serenity-reports</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>aggregate</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

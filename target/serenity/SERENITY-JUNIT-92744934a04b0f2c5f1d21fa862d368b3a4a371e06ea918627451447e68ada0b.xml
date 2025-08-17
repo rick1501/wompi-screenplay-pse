@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Consulta de merchant en Wompi" skipped="0" tests="2" time="0.28" timestamp="2025-08-16 09:04:11"><testcase name="Consulta exitosa de merchant"/><testcase name="Consulta de merchant con llave inválida"/></testsuite>
