@@ -1,6 +1,6 @@
 # Wompi Screenplay + PSE (Serenity BDD)
 
-Proyecto de ejemplo para el reto usando Java, Screenplay, RestAssured y Cucumber BDD.
+Proyecto para el reto usando Java, Screenplay, RestAssured y Cucumber BDD.
 creado por: Ricardo Narveaez C
 
 ## Requisitos
